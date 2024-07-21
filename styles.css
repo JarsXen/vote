@@ -1,0 +1,343 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    overflow: hidden; /* Prevent scrollbars during animation */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: colorChange 5s infinite;
+}
+
+@keyframes colorChange {
+    0% { color: red; }
+    20% { color: orange; }
+    40% { color: yellow; }
+    60% { color: green; }
+    80% { color: blue; }
+    100% { color: purple; }
+}
+
+#logoutButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #FF4136;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+
+#logoutButton:hover {
+    background: #C0392B;
+}
+
+.container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    animation: slideDown 0.7s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.inputGroup {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #000; /* Black font color */
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #6a11cb;
+    outline: none;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #6a11cb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #4e0d94;
+}
+
+.candidate {
+    margin: 10px 0;
+}
+
+.candidate input[type="radio"] {
+    margin-right: 10px;
+}
+
+.message {
+    display: none;
+    padding: 15px;
+    border-radius: 5px;
+    position: fixed;
+    right: 10px; /* Position near the right of the viewport */
+    top: 10px; /* Position near the top of the viewport */
+    z-index: 1000;
+    font-weight: bold;
+    color: #fff; /* Default message color */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.errorMessage {
+    background-color: #FF4136;
+}
+
+.successMessage {
+    background-color: #2ECC71;
+}
+
+.logoutMessage {
+    background-color: #3498DB;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Start from above */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0); /* Start from original position */
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px); /* Move to above */
+    }
+}
+
+.successMessage, .logoutMessage {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.fadeOut {
+    animation: fadeOut 1s ease-in-out forwards;
+}
+
+/* Admin Page Styles */
+#adminContainer {
+    display: none;
+}
+
+.adminTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.adminTable th, .adminTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.adminTable th {
+    background-color: #f4f4f4;
+}
+
+.adminActions {
+    margin-top: 20px;
+}
+
+.adminActions button {
+    margin: 5px;
+}
+
+.inputGroupAdmin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.inputGroupAdmin input {
+    margin-left: 10px;
+    width: calc(100% - 80px);
+}
+/* Admin Page Styles */
+#adminContainer {
+    display: none;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.adminHeader {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.adminHeader h1 {
+    font-size: 32px;
+    color: #333;
+}
+
+.adminControls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.adminControl {
+    flex: 1 1 calc(50% - 20px);
+    margin: 10px;
+}
+
+.controlInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(100% - 22px);
+    margin-bottom: 10px;
+}
+
+.controlInput::placeholder {
+    color: #aaa;
+}
+
+.adminControls button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.addUserButton {
+    background: #3498DB;
+    color: #fff;
+}
+
+.addUserButton:hover {
+    background: #2980B9;
+    transform: scale(1.05);
+}
+
+.deleteUserButton {
+    background: #E74C3C;
+    color: #fff;
+}
+
+.deleteUserButton:hover {
+    background: #C0392B;
+    transform: scale(1.05);
+}
+
+.resetVoteButton {
+    background: #F39C12;
+    color: #fff;
+}
+
+.resetVoteButton:hover {
+    background: #E67E22;
+    transform: scale(1.05);
+}
+
+.detectFraudButton {
+    background: #1ABC9C;
+    color: #fff;
+}
+
+.detectFraudButton:hover {
+    background: #16A085;
+    transform: scale(1.05);
+}
+
+.adminTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.adminTable th, .adminTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.adminTable th {
+    background-color: #f4f4f4;
+}
+
+.adminTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.adminTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.logoutMessage {
+    background-color: #3498DB;
+    bottom: 20px; /* Position at the bottom of the viewport */
+}
